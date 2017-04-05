@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="Cheshire.master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Cheshire Storebrooke</title>
+
+    <link href="/Template/css/index.css" rel="stylesheet" type="text/css"/>
+    <link href="/Template/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/Template/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/Template/js/jquery.min.js"></script>
+    <script src="/Template/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            //selector đến menu cần làm việc
+            var TopFixMenu = $("#fixNav");
+            // dùng sự kiện cuộn chuột để bắt thông tin đã cuộn được chiều dài là bao nhiêu.
+            $(window).scroll(function () {
+                // Nếu cuộn được hơn 150px rồi
+                if ($(this).scrollTop() > 184) {
+                    // Tiến hành show menu ra
+                    TopFixMenu.show();
+                } else {
+                    // Ngược lại, nhỏ hơn 184px thì hide menu đi.
+                    TopFixMenu.hide();
+                }
+            }
+            )
+        })
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container container-fluid">
+        <div class="row">
+            <!--sticky menu-->
+            <nav class="navbar navbar-default" id="fixNav">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Danh mục <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/danhmuc.aspx?dm=1">Văn học - tiểu thuyết</a></li>
+                                    <li><a href="/danhmuc.aspx?dm=2">Khoa học tự nhiên</a></li>
+                                    <li><a href="/danhmuc.aspx?dm=3">Kinh tế - xã hôi</a></li>
+                                    <li><a href="/danhmuc.aspx?dm=4">Sách thiếu nhi</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tác giả <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/dmtg.aspx?dmtg=tgvn">Tác giả trong nước</a></li>
+                                    <li><a href="/dmtg.aspx?dmtg=tgnn">Tác giả nước ngoài</a></li>
+                                    <li><a href="/dmtg.aspx?dmtg=tgdg">Tác giả đoạt giải</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="/lienhe.aspx">Liên hệ</a></li>
+
+                            <li><a href="/tintuc.aspx">Tin tức</a></li>
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="giohang.aspx">
+                                    <span class="glyphicon glyphicon-shopping-cart "></span>
+                                    <span>Giỏ hàng</span>
+                                    <span class="bg-primary slsp">(0)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- /.navbar-collapse -->
+                </div>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <a href="/"> <img src="img/banner.jpg" /></a>
+            </div>
+            <div class="col-md-4">     
+                        <div class="login">
+                            <div class="pull-right">
+                                <asp:HyperLink ID="controlLink1" runat="server" Text ="a"/>
+                                <span> | </span>
+                                <asp:HyperLink ID="controlLink2" runat="server" Text ="b"/>
+                            </div>
+                        </div>
+                    
+                   
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Tìm kiếm..."/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+            </div>
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                     </button>
+
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Danh mục <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/danhmuc.aspx?dm=1">Văn học - tiểu thuyết</a></li>
+                                    <li><a href="/danhmuc.aspx?dm=2">Khoa học tự nhiên</a></li>
+                                    <li><a href="/danhmuc.aspx?dm=3">Kinh tế - xã hôi</a></li>
+                                    <li><a href="/danhmuc.aspx?dm=4">Sách thiếu nhi</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tác giả <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/dmtg.aspx?dmtg=tgvn">Tác giả trong nước</a></li>
+                                    <li><a href="/dmtg.aspx?dmtg=tgnn">Tác giả nước ngoài</a></li>
+                                    <li><a href="/dmtg.aspx?dmtg=tgdg">Tác giả đoạt giải</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="/lienhe.aspx">Liên hệ</a></li>
+
+                            <li><a href="/tintuc.aspx">Tin tức</a></li>
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="giohang.aspx">
+                                    <span class="glyphicon glyphicon-shopping-cart "></span>
+                                    <span>Giỏ hàng</span>
+                                    <span class="bg-primary slsp">(0)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- /.navbar-collapse -->
+                </div>
+
+                <!-- /.container-fluid -->
+            </nav>
+
+            
+        </div>
+        
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <img src="img/links.png" style="width:80px; height:80px" />
+                        </div>
+                        <h2 style="color:#099">Đối tác</h2>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3"><img src="img/nha-nam.jpg" style="width:150px; height:150px" /></div>
+                        <div class="col-md-3"><img src="img/tiki.png" style="width:150px; height:150px" /></div>
+                        <div class="col-md-3"><img src="img/lazada.png" style="width:150px; height:150px" /></div>
+                        <div class="col-md-3"><img src="img/adayroi.png" style="width:150px; height:150px" /></div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p></p>
+                            <p> Địa chỉ: 4 Chùa Bộc, Đống Đa, Hà Nội</p>
+                            <p> Số điện thoại: 0123.456.789</p>
+                            <p> E-mail: storebrooke@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+    </div>
+</body>
+</html>
